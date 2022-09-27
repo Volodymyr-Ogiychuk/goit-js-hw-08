@@ -9,7 +9,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 console.log(galleryItems);
 
-const galleryRef = document.querySelector('li.gallery');
+const galleryRef = document.querySelector('.gallery');
 const markup = [];
 
 galleryItems.forEach(({ preview, original, description }) => {
