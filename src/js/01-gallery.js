@@ -1,11 +1,8 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 // Change code below this line
-
-// Описан в документации
-import SimpleLightbox from "simplelightbox";
-// Дополнительный импорт стилей
-import "simplelightbox/dist/simple-lightbox.min.css";
 
 console.log(galleryItems);
 
@@ -16,7 +13,7 @@ galleryItems.forEach(({ preview, original, description }) => {
     
     markup.push(`
 
-    <li class="gallery__item">
+    <li>
       <a class="gallery__link" href="${original}">
         <img
             class="gallery__image"
@@ -30,22 +27,15 @@ galleryItems.forEach(({ preview, original, description }) => {
 })
 
 galleryRef.insertAdjacentHTML('beforeend', markup.join(' '));
+const itemsRef = document.querySelectorAll('li');
+itemsRef.forEach(element => {
+  element.style.listStyleType = 'none';
+})
+  
 
-galleryRef.addEventListener('click', event => {
-  event.preventDefault();
-
-  var lightbox = new SimpleLightbox('.gallery a', {
+    var lightbox = new SimpleLightbox('.gallery a', {
         captionsData: 'alt',
         captionDelay: 250,
+        
     });
 
-  document.addEventListener("keydown", event => {
-
-    if (event.key === "Escape") {
-      instance.close();
-      document.removeEventListener("keydown", event);
-    }
-  
-  })
-
-});
