@@ -31,6 +31,7 @@ const itemsRef = document.querySelectorAll('li');
 itemsRef.forEach(element => {
   element.style.listStyleType = 'none';
 })
+
   
     var lightbox = new SimpleLightbox('.gallery a', {
         captionsData: 'alt',
