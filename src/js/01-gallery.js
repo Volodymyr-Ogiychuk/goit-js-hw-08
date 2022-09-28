@@ -32,7 +32,6 @@ itemsRef.forEach(element => {
   element.style.listStyleType = 'none';
 })
   
-
     var lightbox = new SimpleLightbox('.gallery a', {
         captionsData: 'alt',
         captionDelay: 250,
